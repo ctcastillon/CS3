@@ -1,0 +1,45 @@
+
+html {
+    	background-image: url("Capture.jpg");
+    	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+    	background: #fefbd8;
+    	font-family: Verdana;
+    	border: 2px dotted blue;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+    	width: 250px;
+   	margin: auto;
+   	margin-bottom: 20px;
+}
+
+p {
+    background-color: hsl(316, 12%, 82%);
+    font-style: italic;
+    padding: 20px;
+    border: 3px black;
+    border-right-style: aridge;
+    border-top-style: aridge;
+    border-left-style: groove;
+    border-right-style: aridge;
+    border-bottom-style: hidden;
+    width: 500px;
+}
+
+body span {
+    	font-weight: bold;
+	font-style: italic;
+    	color: rgb(251, 239, 204);
+    	margin: 2px;
+    	margin-left: 5px;
+    	margin-right: 5px;
+	width: 90%;
+}
