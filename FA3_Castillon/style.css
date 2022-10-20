@@ -23,6 +23,7 @@ h1 {
 }
 
 p {
+    margin: auto;
     background-color: hsl(316, 12%, 82%);
     font-style: italic;
     padding: 20px;
@@ -33,7 +34,6 @@ p {
     border-right-style: aridge;
     border-bottom-style: hidden;
     width: 500px;
-	margin: auto;
 }
 
 body span {
