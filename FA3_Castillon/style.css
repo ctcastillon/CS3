@@ -5,6 +5,7 @@ html {
 	background-size: cover;
 	background-position: center;
 	height: 100%;
+	margin: auto;
 }
 
 h1 {
@@ -32,6 +33,7 @@ p {
     border-right-style: aridge;
     border-bottom-style: hidden;
     width: 500px;
+	margin: auto;
 }
 
 body span {
