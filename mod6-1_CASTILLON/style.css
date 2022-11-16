@@ -1,0 +1,54 @@
+header {
+	padding: 1em;
+	text-align: center;
+	background: #007196;
+	color: white;
+	font-size: 30px;
+	clear: left;
+}
+
+nav {
+	padding: 1em;
+	float: right;
+	max-width: 160px;
+	height: 134px;
+	border-style: solid;
+	border-color: #333;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	padding-right: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #c5bd99;
+}
+
+article {
+	padding: 1em;
+}
+
+aside > p {
+	box-shadow: 3px 5px 3px 1px #7e563e;
+	background: lightgray;
+	padding: 20px;
+	margin-right: 40px; 
+	font-style: italic;
+	font-size: 80%;
+	position: relative; 
+	top:-40px;
+	float: right;
+}
+
+footer {
+	padding: 1em;
+	text-align: center;
+	background: #007196;
+	color: white;
+	font-size: 20px;
+	clear: left;
+}
