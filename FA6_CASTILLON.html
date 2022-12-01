@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<style>
+				a.link1 {
+					background-color: #ff5050;
+					text-decoration: none;
+					border: solid white 1px;
+					padding: 5px;
+				}
+
+				a.hover, a:active {
+					background-color: #66ff66;
+					color:white;
+				}
+				
+				
+				div {
+					width: 100px;
+					height: 100px;
+					border: 1px solid black;
+					box-sizing: border-box;
+					margin: 10px;
+				}
+				
+				div#Div1:target {
+					background-color: #666699;
+					color: #ffd633;
+					
+				}
+				
+				
+				a.link2 {
+					background-color: #ff9966;
+					text-decoration: none;
+					border: solid white 1px;
+					padding: 5px;
+				}
+	
+				a.hover, a:active {
+					background-color: #66ff66;
+					color: white;
+					}
+				}
+				
+				div {
+					width: 100px;
+					height: 100px;
+					border: 1px solid black;
+					box-sizing: border-box;
+					margin: 10px;
+				}
+				div#Div2:target {
+					background-color: #248f8f;
+					border: 10px dotted green;
+					color: #ffd633;
+				}
+				
+				
+			</style>
+		<head>
+	<body>
+
+		<a class="link1" href="#Div1" target="_blank">First Link</a>
+		<a class="link2" href="#Div2" target="_blank">Second Link</a>
+		
+		<div id="Div1">Div1 Here</div><br>
+		<div id="Div2">Div2 Here</div><br>	
+
+	</body>
+</html>
