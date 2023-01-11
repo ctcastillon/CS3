@@ -2,17 +2,21 @@ body{
  	box-sizing: border-box;
 	margin:0px;
  	padding:0px;
+    	font-family: monospace;
 }
 h1{
  	text-align:center;
  	margin-top:15px;
  	margin-bottom:15px;
+    	font-family: monospace;
 	
 }
 section{ 
   	width:33%;
   	height:33%;
   	float:left;
+	font-style: italic;
+    	font-family: monospace;
 }
 article{
 
@@ -20,26 +24,32 @@ article{
   	margin-left:10px;
   	margin-right:10px;
   	border-color:black;
-	  border-style:solid;
+	border-style:solid;
   	background-color:#EEE;
   	position:absolute;
+	font-style: italic;
+    	font-family: monospace;
 }
 h2{ 
   	width:100px;
   	text-align:center;
   	border-color:black;
-	  border-style:solid;
-	  border-width:1px;
+	border-style:solid;
+	border-width:1px;
   	position:absolute;
-	  text-align:center;
+	text-align:center;
   	top:0px;
   	right:0px;
+	font-style: italic;
+    	font-family: monospace;
 }
 p{
  	 margin-top:35px;
  	 margin-right:5px;
  	 margin-bottom:5px;
  	 margin-left:5px;
+	 font-style: italic;
+    	 font-family: monospace;
 }
 #chicken{
  	 background-color:#ffff99;
