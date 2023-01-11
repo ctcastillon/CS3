@@ -1,7 +1,7 @@
 *{
- box-sizing: border-box;
- margin:0px;
- padding:0px;
+ 	box-sizing: border-box;
+	margin:0px;
+ 	padding:0px;
 }
 h1{
  	text-align:center;
@@ -10,7 +10,8 @@ h1{
 	
 }
 .section{ 
-  	width:33.3%;
+  	width:33%;
+	height:33%;
   	float:left;
 }
 .article{
@@ -18,16 +19,21 @@ h1{
   	border: 1px solid black;
   	margin-left:10px;
   	margin-right:10px;
+  	border-color:black;
+	border-style:solid;
   	background-color:#EEE;
   	position:relative;
 }
 h2{ 
   	width:100px;
   	text-align:center;
-  	border:1px solid black;
+  	border-color:black;
+	border-style:solid;
+	border-width:1px;
   	position:absolute;
-  	top:0;
-  	right:0;
+	text-align:center;
+  	top:0px;
+	right:0px;
 }
 #chicken{
  	 background-color:yellow;
