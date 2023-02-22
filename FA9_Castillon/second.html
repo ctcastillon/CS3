@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KIM DOKJA</title>//Second page
+	<script>
+		function next() {
+			document.getElementById("image").src = "kim dokja.jpg";
+		}
+		function prev() {
+			document.getElementById("image").src = "dokja.jpg";
+		}
+	</script>
+</head>
+<body>
+	<img id="image" src="dokja.jpg">
+	<br>
+	<button onclick="next()">Replace Image</button>
+	<button onclick="prev()">Revert Image</button>
+</body>
+</html>
