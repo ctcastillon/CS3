@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FA_castillon</title>
+</head>
+<body>
+    <script>
+	function determineTriangle(a, b, c) {
+        if (a === b && b === c) {
+          alert("The triangle is EQUILATERAL.");
+        } else if (a === b || a === c || b === c) {
+          alert("The triangle is ISOSCELES.");
+        } else {
+          alert("The triangle is SCALENE.");
+        }
+      }
+      
+      var a = prompt("Enter the length of side a: ");
+      var b = prompt("Enter the length of side b: ");
+      var c = prompt("Enter the length of side c: ");
+      
+      determineTriangle(parseInt(a), parseInt(b), parseInt(c));
+    </script>
+</body>
+</html>
