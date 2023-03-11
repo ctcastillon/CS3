@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Random Number Breakdown</h1>
+	<p>Do you want to do learn something interesting?</p>
+	<p>Click the button to generate a random number</p>
+
+<button onclick="myFunction()">Generate Number</button>
+
+<p id="generated-num"></p>
+<p id="breakdown"></p>
+
+<script>
+	function myFunction() {
+		var x = (Math.random() * 1000).toFixed(0);
+		document.getElementById("generated-num").innerHTML = "Randomly generated number: "+ x;
+		let y = x.toString();
+			if (y.length == 3){
+				var h = y.charAt(0)*100;
+				var t = y.charAt(1)*10;
+				var o = y.charAt(2);
+			} else if (y.length == 2){
+				var h = 0;
+				var t = y.charAt(0)*10;
+				var o = y.charAt(1);
+			} else {
+				var h = 0;
+				var t = 0;
+				var o = y.charAt(0);
+			}
+		document.getElementById("breakdown").innerHTML = "Breakdown: "+h+", "+t+", "+o;
+			}
+</script>
+
+</body>
+</html>
+
+
