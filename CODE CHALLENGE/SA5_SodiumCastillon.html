@@ -45,18 +45,18 @@
     
     	//Declare and call the function buy()
         function buy() {
-        	//Prompts the user to enter the item number in order to classify what item the user wants
+            //Prompts the user to enter the item number in order to classify what item the user wants
             let x = prompt("Enter the item number:");
             //Prompts the user to enter the quantity of the the chosen item 
             let y = prompt("Enter the quantity:");
             //This statement will determine if the quantity that you entered is an integer
             if (y && !isNaN(y)) {
             	//This statement will turn your input into an integer
-   				qty = parseInt(y);
+   		qty = parseInt(y);
                 
                 //declare the variable z 
                 let z;
-				//Use the switch statement in order to execute multiple actions for multiple conditions
+		//Use the switch statement in order to execute multiple actions for multiple conditions
                 switch (x) {
                     case "1":
                         z = item1;
