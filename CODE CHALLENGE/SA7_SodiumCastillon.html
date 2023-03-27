@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+			<meta charset="UTF-8">
+  			<meta name="keywords" content="JavaScript">
+  			<meta name="author" content="Cayll T. Castillon">
+  			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+  	<!-- The onclick button calls and executes the function Name()-->
+    <button onclick="Name()"> Click here to enter your name </button>
+     <script>
+    	function Name() {
+		//Prompts the user to input its name and displays its output.
+        	var x = prompt("Please enter your fullname");
+  			document.getElementById("thename").innerHTML = x;
+            
+		//The length property returns the length of a string that is inputed by the user.
+            let y = x.length;
+            
+		/*
+            Declare the variable sum and separate your 2 digit number using the string method.
+			String methods were used in order to split and convert the length into a string.
+			The Map property stores your separated string datatype inside an array.
+			The parseInt() function then converts your string argument into an integer.
+		*/
+            var sum = y.toString().split('').map(function(arr) {
+   			return parseInt(arr); 
+			})
+            
+      	//The reduce property calls a function and adds all of your elements that is stored in your array.
+			.reduce(function(PrevValue, curValue, array) {
+  			return PrevValue + curValue;
+			}, 0);
+            		
+        //Use the switch statement in order to execute multiple actions for multiple conditions
+	//declare the variable z 
+    		let z;
+			switch (sum){
+  				case 1:
+    				z = "Thou fate lies in studying.";
+    				break;
+  				case 2:
+    				z = "Thou fate lies in adventure.";
+    				break;
+  				case 3:
+    				z = "Thou fate lies in music.";
+    				break;
+  				case 4:
+    				z = "Thou fate will be plagued with misfortune.";
+    				break;
+  				case 5:
+    				z = "Thou fate lies in your effort to become the best.";
+    				break;
+  				case 6:
+     				z = "Thou shall pass all of your trials and tribulations.";
+   					break;
+  				case  7:
+   			 		z = "Thou shall be rewarded for your hardwork.";
+             			break;
+  				case  8:
+    				z = "Thou shall find what was lost.";
+           			break;
+  				case 9:
+    				z = "Thou shall recieve a blessing today.";
+            		break;
+			}
+		document.getElementById("fortune").innerHTML = z;
+        }
+        
+    </script>
+    
+</body>
+</html>
