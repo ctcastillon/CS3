@@ -20,9 +20,9 @@
 <body>
 	<h1> Your Fortune is in your name </h1>
 	<h2> Your Name is: <span id="thename"> </span></h2>
-    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    	<h2> Today's fortune: <span id="fortune"> </span></h2>
     
-  	<!-- The onclick button calls and executes the function Name()-->
+    <!-- The onclick button calls and executes the function Name()-->
     <button onclick="Name()"> Click here to enter your name </button>
      <script>
     	function Name() {
@@ -31,25 +31,25 @@
   			document.getElementById("thename").innerHTML = x;
             
 		//The length property returns the length of a string that is inputed by the user.
-            let y = x.length;
+            	let y = x.length;
             
-		/*
-            Declare the variable sum and separate your 2 digit number using the string method.
-			String methods were used in order to split and convert the length into a string.
-			The Map property stores your separated string datatype inside an array.
-			The parseInt() function then converts your string argument into an integer.
-		*/
-            var sum = y.toString().split('').map(function(arr) {
+			/*
+            			Declare the variable sum and separate your 2 digit number using the string method.
+				String methods were used in order to split and convert the length into a string.
+				The Map property stores your separated string datatype inside an array.
+				The parseInt() function then converts your string argument into an integer.
+			*/
+            		var sum = y.toString().split('').map(function(arr) {
    			return parseInt(arr); 
 			})
             
-      	//The reduce property calls a function and adds all of your elements that is stored in your array.
+      			//The reduce property calls a function and adds all of your elements that is stored in your array.
 			.reduce(function(PrevValue, curValue, array) {
   			return PrevValue + curValue;
 			}, 0);
             		
-        //Use the switch statement in order to execute multiple actions for multiple conditions
-	//declare the variable z 
+        	//Use the switch statement in order to execute multiple actions for multiple conditions
+		//declare the variable z 
     		let z;
 			switch (sum){
   				case 1:
@@ -69,9 +69,9 @@
     				break;
   				case 6:
      				z = "Thou shall pass all of your trials and tribulations.";
-   					break;
+   				break;
   				case  7:
-   			 		z = "Thou shall be rewarded for your hardwork.";
+   			 	z = "Thou shall be rewarded for your hardwork.";
              			break;
   				case  8:
     				z = "Thou shall find what was lost.";
@@ -81,8 +81,7 @@
             		break;
 			}
 		document.getElementById("fortune").innerHTML = z;
-        }
-        
+        }    
     </script>
     
 </body>
