@@ -8,7 +8,7 @@
   			<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     body {
-    			background: lightblue; 
+    		background: lightblue; 
             	text-align: left;
             	font-family: verdana;
                 color: navy;
@@ -72,17 +72,17 @@
                         return;
                 }
                 //This statement will help compute for your bill 
-                let bill = z.price * qty;
+                let v = z.price * qty;
                 //this will print the item's name, quantity, and price
                 document.getElementById("item").innerHTML = z.name;
                 document.getElementById("qty").innerHTML = qty;
-                document.getElementById("bill").innerHTML = bill.toLocaleString("en-PH", {style:"currency", currency:"Php"});
+                document.getElementById("bill").innerHTML = v.toLocaleString("en-PH", {style:"currency", currency:"Php"});
                 
                 //This statement will help compute for your overall total bill after you selected your desired items
-                let currentBill = parseFloat(document.getElementById("tbill").innerHTML);
-                currentBill += bill;
+                let f = parseFloat(document.getElementById("tbill").innerHTML);
+                f += v;
                 //this will print your total bill 
-                document.getElementById("tbill").innerHTML = currentBill.toFixed(2);
+                document.getElementById("tbill").innerHTML = f.toFixed(2);
             } else {
                 alert("Invalid quantity.");
             }
