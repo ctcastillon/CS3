@@ -45,18 +45,18 @@
     
     	//Declare and call the function buy()
         function buy() {
-        	//Prompts the user to enter the item number in order to classify what item the user wants
+            //Prompts the user to enter the item number in order to classify what item the user wants
             let x = prompt("Enter the item number:");
             //Prompts the user to enter the quantity of the the chosen item 
             let y = prompt("Enter the quantity:");
             //This statement will determine if the quantity that you entered is an integer
             if (y && !isNaN(y)) {
             	//This statement will turn your input into an integer
-   				qty = parseInt(y);
+   		qty = parseInt(y);
                 
                 //declare the variable z 
                 let z;
-				//Use the switch statement in order to execute multiple actions for multiple conditions
+		//Use the switch statement in order to select the item using the string number 
                 switch (x) {
                     case "1":
                         z = item1;
@@ -71,17 +71,20 @@
                         alert("Invalid item number.");
                         return;
                 }
-                //This statement will help compute for your bill 
+                //This statement will help compute for your bill
+		//Declare v as your bill
                 let v = z.price * qty;
-                //this will print the item's name, quantity, and price
+		    
+                //This will print the item's name, quantity, and price
                 document.getElementById("item").innerHTML = z.name;
                 document.getElementById("qty").innerHTML = qty;
                 document.getElementById("bill").innerHTML = v.toLocaleString("en-PH", {style:"currency", currency:"Php"});
                 
                 //This statement will help compute for your overall total bill after you selected your desired items
+		//Declare f as your current bill or total bill
                 let f = parseFloat(document.getElementById("tbill").innerHTML);
                 f += v;
-                //this will print your total bill 
+                //This will print your total bill 
                 document.getElementById("tbill").innerHTML = f.toFixed(2);
             } else {
                 alert("Invalid quantity.");
@@ -89,9 +92,9 @@
         }
     	//Declare and call the function clr() in order to clear all of your inputted data
         function clr() {
-            document.getElementById("item").innerHTML = "";
-            document.getElementById("qty").innerHTML = "";
-            document.getElementById("bill").innerHTML = "";
+            document.getElementById("item").innerHTML = "0";
+            document.getElementById("qty").innerHTML = "0";
+            document.getElementById("bill").innerHTML = "0";
             document.getElementById("tbill").innerHTML = "0";
         }
  </script>
