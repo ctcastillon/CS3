@@ -34,7 +34,6 @@
 <p>by</p>
 <p id="print" class="print"></p>
 
-<p id="popup"></p>
 
 <table id="mytable"></table><br>
 
@@ -48,12 +47,10 @@
         document.getElementById("print").innerHTML = y;
         let g;
     		if (x<2 || x>10){
-    			g = alert("Invalid number");
-                document.getElementById("popup").innerHTML = g;
+    			g = alert("Please enter numbers between 2 and 10");
                 }
     		else if (y<2 || y>10){
-            	g = alert("Invalid number");
-                document.getElementById("popup").innerHTML = g;
+            	g = alert("Please enter numbers between 2 and 10");
                 }
     		else{
             
