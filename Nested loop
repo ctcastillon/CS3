@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
-	    table,th,td{
-		      border: 1px solid blue;
+	  table,th,td{
+		  border: 1px solid blue;
           border-collapse:collapse;
-	    }
+	  }
       th,td{
-		      border: 1px solid blue;
+		  border: 1px solid blue;
           text-align: center;
           width:30px;
           font-size:20px;
@@ -34,6 +34,8 @@
 <p>by</p>
 <p id="print" class="print"></p>
 
+<p id="popup"></p>
+
 <table id="mytable"></table><br>
 
 <button onclick="display()">Click me</button>
@@ -41,22 +43,22 @@
 <script> 
 	function display() {
 		var x = prompt("Please enter a number");
-    		if (2<=x<=10){
-    			document.getElementById("demo").innerHTML = x;
-    		}
+        document.getElementById("demo").innerHTML = x;
+        var y = prompt("Please enter a number");
+        document.getElementById("print").innerHTML = y;
+        let g;
+    		if (x<2 || x>10){
+    			g = alert("Invalid number");
+                document.getElementById("popup").innerHTML = g;
+                }
+    		else if (y<2 || y>10){
+            	g = alert("Invalid number");
+                document.getElementById("popup").innerHTML = g;
+                }
     		else{
-  				alert("Invalid number");
-  			}
-		var y = prompt("Please enter a number");
-    		if (2<=y<=10){
-            	document.getElementById("print").innerHTML = y;
-    	  }
-    		else{
-  				alert("Invalid number");
-  		  }
-        
-	  	var table=document.getElementById('mytable');
-    	var output="";
+            
+  			var table=document.getElementById('mytable');
+    		var output="";
       		for (var i=1;i<=x;i++) {
   		  		output +="<tr>";
           		for (var j=1;j<=y;j++) {
@@ -73,7 +75,9 @@
         		output +="</tr>";
        		}
     		table.innerHTML=output;
-   	}  
+   		} 
+       }
+ 
 </script>
 </body>
 </html> 
