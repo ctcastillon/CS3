@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <style>
-	  table,th,td{
-		  border: 1px solid blue;
-          border-collapse:collapse;
-	  }
-      th,td{
-		  border: 1px solid blue;
-          text-align: center;
-          width:30px;
-          font-size:20px;
-	   }
-      th{
-		  color:black;
-	   }
-      .demo{
-    	  border: 1px solid blue;
-          width: 70px;
-          height:20px;
-      }
-      .print{
-    	  border: 1px solid blue;
-          width: 70px;
-          height:20px;
+	table,th,td{
+          	border: 1px solid blue;
+          	border-collapse:collapse;
+		}
+	th,td{
+		border: 1px solid blue;
+                text-align: center;
+                width:30px;
+                font-size:20px;
+		}
+	th{
+		color:black;
+		}
+	.demo{
+		border: 1px solid blue;
+		width: 70px;
+		height:20px;
+		}
+      	.print{
+    	  	border: 1px solid blue;
+          	width: 70px;
+          	height:20px;
       }
 </style>
 <body>
@@ -41,32 +41,31 @@
 
 <script> 
 	function display() {
-		var x = prompt("Please enter a number");
+	var x = prompt("Please enter a number");
         document.getElementById("demo").innerHTML = x;
         var y = prompt("Please enter a number");
         document.getElementById("print").innerHTML = y;
         let g;
     		if (x<2 || x>10){
-    			g = alert("Please enter numbers between 2 and 10");
+    		g = alert("Please enter numbers between 2 and 10");
                 }
     		else if (y<2 || y>10){
             	g = alert("Please enter numbers between 2 and 10");
                 }
     		else{
-            
-  			var table=document.getElementById('mytable');
+  		var table=document.getElementById('mytable');
     		var output="";
       		for (var i=1;i<=x;i++) {
   		  		output +="<tr>";
-          		for (var j=1;j<=y;j++) {
+          			for (var j=1;j<=y;j++) {
           			if (i==1 && j==1)
     		    		output+="<th>1</th>";
-    	    		else
+    	    			else
           				{
         	  				if (i==1 || j==1)
     		      				output+="<th>"+i*j+"</th>";
-    		    			else
-			        			output+="<td>"+i*j+"</td>"; 
+    		    				else
+			        		output+="<td>"+i*j+"</td>"; 
            				}
         		}
         		output +="</tr>";
