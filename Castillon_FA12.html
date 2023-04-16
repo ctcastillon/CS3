@@ -14,50 +14,42 @@
 	th{
 		color:black;
 		}
-	.demo{
-		border: 1px solid blue;
-		width: 70px;
-		height:20px;
-		}
-      	.print{
-    	  	border: 1px solid blue;
-          	width: 70px;
-          	height:20px;
-      }
 </style>
 <body>
 <h2>Multiplication Table</h2>
 
 <p>[ Enter numbers between 2 and 10 ]</p>
 
-<p id="demo" class="demo"></p>
-<p>by</p>
-<p id="print" class="print"></p>
-
-
-<table id="mytable"></table><br>
-
+    <label for="x"></label>
+    <input type="text" id="start"> <br>
+    <p>by</p>
+    <label for="y"></label>
+    <input type="text" id="end"> <br>
+    
+<p>[ Click the button in order to generate a table ]</p>
 <button onclick="display()">Click me</button>
+
+<p>[ Multiplication Table ]</p>
+<table id="mytable"></table><br>
 
 <script> 
 	function display() {
-	var x = prompt("Please enter a number");
-        document.getElementById("demo").innerHTML = x;
-        var y = prompt("Please enter a number");
-        document.getElementById("print").innerHTML = y;
-        let g;
+        let y = parseInt(document.getElementById("start").value);
+        let x = parseInt(document.getElementById("end").value);
     		if (x<2 || x>10){
-    		g = alert("Please enter numbers between 2 and 10");
+    		alert("Please enter numbers between 2 and 10");
+            	return;
                 }
     		else if (y<2 || y>10){
-            	g = alert("Please enter numbers between 2 and 10");
+            	alert("Please enter numbers between 2 and 10");
+                return;
                 }
     		else{
-  		var table=document.getElementById('mytable');
+            	var table=document.getElementById('mytable');
     		var output="";
-      		for (var i=1;i<=x;i++) {
+      		for (var i=1;i<=y;i++) {
   		  		output +="<tr>";
-          			for (var j=1;j<=y;j++) {
+          			for (var j=1;j<=x;j++) {
           			if (i==1 && j==1)
     		    		output+="<th>1</th>";
     	    			else
