@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>mRNA Sequence Analysis</h2>
+<script>
+// User input
+var mRNA = prompt("Enter the mRNA sequence:");
+
+// Start codon
+var startCodon = "AUG";
+
+// Codon table
+var codonTable = {
+  "UUU": "Phe",
+  "UUC": "Phe",
+  "UUA": "Leu",
+  "UUG": "Leu",
+  "CUU": "Leu",
+  "CUC": "Leu",
+  "CUA": "Leu",
+  "CUG": "Leu",
+  "AUU": "Ile",
+  "AUC": "Ile",
+  "AUA": "Ile",
+  "AUG": "Met",
+  "GUU": "Val",
+  "GUC": "Val",
+  "GUA": "Val",
+  "GUG": "Val",
+  "UCU": "Ser",
+  "UCC": "Ser",
+  "UCA": "Ser",
+  "UCG": "Ser",
+  "CCU": "Pro",
+  "CCC": "Pro",
+  "CCA": "Pro",
+  "CCG": "Pro",
+  "ACU": "Thr",
+  "ACC": "Thr",
+  "ACA": "Thr",
+  "ACG": "Thr",
+  "GCU": "Ala",
+  "GCC": "Ala",
+  "GCA": "Ala",
+  "GCG": "Ala",
+  "UAU": "Tyr",
+  "UAC": "Tyr",
+  "UAA": "STOP",
+  "UAG": "STOP",
+  "CAU": "His",
+  "CAC": "His",
+  "CAA": "Gln",
+  "CAG": "Gln",
+  "AAU": "Asn",
+  "AAC": "Asn",
+  "AAA": "Lys",
+  "AAG": "Lys",
+  "GAU": "Asp",
+  "GAC": "Asp",
+  "GAA": "Glu",
+  "GAG": "Glu",
+  "UGU": "Cys",
+  "UGC": "Cys",
+  "UGA": "STOP",
+  "UGG": "Trp",
+  "CGU": "Arg",
+  "CGC": "Arg",
+  "CGA": "Arg",
+  "CGG": "Arg",
+  "AGU": "Ser",
+  "AGC": "Ser",
+  "AGA": "Arg",
+  "AGG": "Arg",
+  "GGU": "Gly",
+  "GGC": "Gly",
+  "GGA": "Gly",
+  "GGG": "Gly"
+};
+
+// Locate start codon and extract the succeeding sequence
+var startIndex = mRNA.indexOf(startCodon);
+if (startIndex === -1) {
+  document.write("Error: Start codon not found!");
+} else {
+  var sequence = mRNA.substring(startIndex);
+
+  // Divide the succeeding sequence by 3 to identify next codons
+  var codons = [];
+  for (let i = 0; i < sequence.length; i += 3) {
+    var codon = sequence.substr(i, 3);
+    codons.push(codon);
+    if (codon === "UAA" || codon === "UAG" || codon === "UGA") {
+      break;  // Stop when a stop codon is met
+      document.write(codon);
+    }
+  }
+  
+  
+// Display codons
+document.write("[");
+  for (let i = 0; i < codons.length; i++) {
+    var codon = codons[i];
+      document.write('"' + codon + '"'+',');
+      if (i < codons.length - 1) {
+        document.write("");
+    }
+}
+document.write("]");
+
+
+// Display amino acids
+  document.write("<br>");
+  for (let i = 0; i < codons.length; i++) {
+    var codon = codons[i];
+    if (codonTable.hasOwnProperty(codon)) {
+      var aminoAcid = codonTable[codon];
+      document.write('"' + codon + '"'+"--> " + aminoAcid);
+      if (i < codons.length - 1) {
+        document.write("<br>");
+      }
+    }
+  }
+  document.write("");
+}
+
+</script>
+
+</body>
+</html> 
