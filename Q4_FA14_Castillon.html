@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sign Up Sheet</title>
-	<style>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <title>Sign Up Sheet</title>
+  	<style>
 		body{
 			background: linear-gradient(to bottom left, #3399ff 0%, #ff6699 100%);
 		}
@@ -15,37 +16,35 @@
 			width: 50%;
 		}
         
-        ion-icon{
+        	ion-icon{
 			position:relative;
-            right: 27px;
-            color: #990099;
-            margin-top: 10px;
+            		right: 27px;
+            		color: #990099;
+            		margin-top: 10px;
  
-        }
+        	}
 
-        legend{
-        	font-family: verdana;
-            color: #990099;
-            margin-bottom: 20px;
-            text-align:center;
-            font-size: 20px;
+       		legend{
+        		font-family: verdana;
+            		color: #990099;
+            		margin-bottom: 20px;
+            		text-align:center;
+            		font-size: 20px;
             
-        }
+        	}
 
 		h1{
 			text-align: center;
 			margin-bottom: 20px;
 			font-size: 50px;
-            color:#fff;
-  			
+            		color:#fff;	
 		}
         
-        h2{
+        	h2{
 			text-align: center;
-            color: #990099;
-            font-size: 30px;
-            top: 10px;
-  			
+            		color: #990099;
+            		font-size: 30px;
+            		top: 10px;
 		}
 
 		fieldset{
@@ -77,9 +76,9 @@
 			border-radius: 5px;
 			font-size: 16px;
 			cursor: pointer;
-            margin-left: 90px;
+            		margin-left: 500px;
 		}
-        input[type="reset"]{
+        	input[type="reset"]{
 			background-color: #990099;
 			color: #fff;
 			padding: 15px 20px;
@@ -87,8 +86,8 @@
 			border-radius: 5px;
 			font-size: 16px;
 			cursor: pointer;
-            margin-left: 10px;
-            }
+            		text-align:center;
+            	}
             
 		input[type="submit"]:hover, input[type="reset"]:hover{
 			background-color: #660066;
@@ -105,36 +104,37 @@
 			color: #990099;
 			margin-bottom: 10px;
 		}
-		p{
-			font-weight: bold;
-			color: #333;
-			margin-bottom: 5px;
-            text-align:center;
-		}
+        
+     p{
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
+        text-align:center;
+    }
+        
     .o{
         color: #990099;
         font-family: verdana;
     }
-		.input-control{
-			display:flex;
-			display-direction: column;
-		}
-      
-		.input-control input, .input-control textarea{
-			width: 100%;
-			padding: 15px;
-      display: block;
-			border: 2px solid #33ccff;
-			border-radius: 5px;
-			margin-bottom: 15px;
-			font-size: 16px;
-      } 
-
+        
+    .input-control{
+	display:flex;
+	display-direction: column;
+    }  
+    .input-control input, .input-control textarea{
+	width: 100%;
+	padding: 15px;
+        display: block;
+	border: 2px solid #33ccff;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	font-size: 16px;
+   } 
     :root {
-   --color-default: #33ccff;
+   --color-default: green;
    --color-invalid: red;
    --color-valid: green;
-    }
+   }
    textarea,input {
       border: 2px solid var(--color-default);
    }
@@ -147,15 +147,36 @@
     textarea,input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
         display: block; 
     }
-
     textarea,input:not(:focus):not(:placeholder-shown):valid {
         border-color: var(--color-valid);
       }
-	</style>
-</head>
+</style>
+  <script language="JavaScript">
+    function showInput() {
+        
+        document.getElementById('display1').innerHTML = 
+                    document.getElementById("name").value;
+        document.getElementById("display2").innerHTML = document.getElementById("username").value;
+        
+        x = document.getElementById("gender").value;  document.getElementById("display3").innerHTML = x;
+        
+         document.getElementById("display4").innerHTML = document.getElementById("password").value;
+        
+         document.getElementById("display5").innerHTML = document.getElementById("email").value;
+         
+         document.getElementById("display6").innerHTML = document.getElementById("address").value;
+         
+        document.getElementById("#display7").innerHTML = document.getElementById("interests").value;
+       
+    }
+  </script>
+  <script language="JavaScript" type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script language="JavaScript" nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </head>
 <body>
 	<h1>Sign Up Sheet</h1>
-	<form id="form" action="/">
+  	<form id="form" action="/">
 		<fieldset>
 			<legend>Personal Information</legend>
 
@@ -206,37 +227,21 @@
 			<div class="error"></div>
 			</div>
 		</fieldset>
-		<input type="submit" value="Submit" onclick="onSubmit(event); return false">
-		<input type="reset" value="Reset">
 	  </form>
-	
-  <fieldset>
+	<input type="submit" onclick="showInput();">
+    <input type="reset" value="Reset">
+
+	<fieldset>
 	<div class="output" id="output-div">
 	<legend>User Information</legend>
-    
-    
-    <p>Name: <span id="display1"></span></p>
-    <p>Username: <span id="display2"></span></p>
-    <p>Gender: <span id="display3"></span></p>
-    <p>Password: <span id="display4"></span></p>
-    <p>Email: <span id="display5"></span></p>
-    <p>Address: <span id="display6"></span></p>
-    <p>Interest: <span id="display7"></span></p>
-    
-	</fieldset>
-    
-	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
-	<script>
-        function onSubmit() {
-		    document.getElementById('display1').innerHTML = document.getElementById("name").value;
-        document.getElementById('display2').innerHTML = document.getElementById("username").value;
-        document.getElementById('display3').innerHTML = document.getElementById("gender").value;
-        document.getElementById('display4').innerHTML = document.getElementById("password").value;
-        document.getElementById('display5').innerHTML = document.getElementById("email").value;
-        document.getElementById('display6').innerHTML = document.getElementById("address").value;
-        document.getElementById('display7').innerHTML = document.getElementById("interest").value;
-	</script>
+  		<p>Name: <span id="display1"></span></p>
+    		<p>Username: <span id="display2"></span></p>
+    		<p>Gender: <span id="display3"></span></p>
+    		<p>Password: <span id="display4"></span></p>
+    		<p>Email: <span id="display5"></span></p>
+    		<p>Address: <span id="display6"></span></p>
+    		<p>Interest: <span id="display7"></span></p>
+  	</fieldset>
+  	</div>
 </body>
 </html>
