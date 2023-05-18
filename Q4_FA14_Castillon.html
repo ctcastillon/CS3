@@ -130,45 +130,88 @@
 	margin-bottom: 15px;
 	font-size: 16px;
    } 
-    :root {
-   --color-default: green;
-   --color-invalid: red;
-   --color-valid: green;
+   input {
+      border: 2px solid #33ccff;
    }
-   textarea,input {
-      border: 2px solid var(--color-default);
+   textarea {
+      border: 2px solid #33ccff;
    }
-   input:focus {
+    input:focus {
       outline: none;
     }
-    textarea,input:not(:focus):not(:placeholder-shown):invalid {
-       border-color: var(--color-invalid);
+    textarea:focus {
+      outline: none;
     }
-    textarea,input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+    input:not(:focus):not(:placeholder-shown):invalid {
+       border-color: #ff9999;
+    }
+ 	textarea:not(:focus):not(:placeholder-shown):invalid {
+       border-color: #ff9999;
+    }
+    input:not(:focus):not(:placeholder-shown):invalid {
         display: block; 
     }
-    textarea,input:not(:focus):not(:placeholder-shown):valid {
-        border-color: var(--color-valid);
+    textarea:not(:focus):not(:placeholder-shown):invalid {
+       display: block;
+    }
+ 
+    input:not(:focus):not(:placeholder-shown):valid {
+        border-color: #99ff99;
       }
+    
+    
+    
 </style>
   <script language="JavaScript">
-    function showInput() {
+  
+  				function Success(inputString, id) {
+				if (inputString.trim() == "") {
+				  document.getElementById(id).style.borderColor = "red";
+				 }
+				  else{
+					document.getElementById(id).style.borderColor = "lime";
+				  }
+
+			   };
+
+			   
+			   function Error(inputString, id) {
+				  if (inputString.trim() == "") {
+				  document.getElementById(id).style.borderColor = "red";
+				 }
+				  else{
+					document.getElementById(id).style.borderColor = "lime";
+				  }
+			   };
+
+			   function clearAll() {
+				document.getElementById("name").style.borderColor = "#33ccff";
+				document.getElementById("username").style.borderColor = "#33ccff";
+				document.getElementById("gender").style.borderColor = "black";
+				document.getElementById("email").style.borderColor = "#33ccff";
+				document.getElementById("password").style.borderColor = "#33ccff";
+				document.getElementById("address").style.borderColor = "#33ccff";
+				document.getElementById("interests").style.borderColor = "#33ccff";
+				document.getElementById("display1").innerHTML = "";
+				document.getElementById("display2").innerHTML = "";
+				document.getElementById("display3").innerHTML = "";
+				document.getElementById("display4").innerHTML = "";
+				document.getElementById("display5").innerHTML = "";
+				document.getElementById("display6").innerHTML = "";
+				document.getElementById("display7").innerHTML = "";
+			   };
+			function showInput() {
         
-        document.getElementById('display1').innerHTML = 
-                    document.getElementById("name").value;
-        document.getElementById("display2").innerHTML = document.getElementById("username").value;
-        
+        document.getElementById('display1').innerHTML =  document.getElementById("name").value;
+        document.getElementById("display2").innerHTML = document.getElementById("username").value;  
         x = document.getElementById("gender").value;  document.getElementById("display3").innerHTML = x;
-        
          document.getElementById("display4").innerHTML = document.getElementById("password").value;
-        
          document.getElementById("display5").innerHTML = document.getElementById("email").value;
-         
          document.getElementById("display6").innerHTML = document.getElementById("address").value;
-         
         document.getElementById("display7").innerHTML = document.getElementById("interests").value;
        
     }
+			   
   </script>
   <script language="JavaScript" type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script language="JavaScript" nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -182,54 +225,47 @@
 
 			<div class="input-control">
 			<ion-icon name="person-outline"></ion-icon>
-			<input type="text" id="name" placeholder="Name"><br>
-			<div class="error"></div>
+			<input type="text" id="name" placeholder="Name" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"><br>
 			</div>
 			
 			<div class="input-control">
 			<ion-icon name="person-add-outline"></ion-icon>
-			<input type="text" id="username" placeholder="Userame"><br>
-			<div class="error"></div>
+			<input type="text" id="username" placeholder="Userame" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"><br>
 			</div>
 
 			<div class="input-control">
 			<ion-icon name="male-female-outline"></ion-icon>
-			<select id="gender" name="gender" placeholder="Gender">
+			<select id="gender" name="gender" placeholder="Gender" onblur="Error(this.value, this.id)"  oninvalid="this.setCustomValidity('Please select your gender.)">
 				<option value="">Select Gender</option>
 				<option value="male">Male</option>
 				<option value="female">Female</option>
 				<option value="prefer not to mention">Prefer Not to Mention</option>
 			</select><br>
-			<div class="error"></div>
 			</div>
 
 			<div class="input-control">
 			<ion-icon name="lock-closed-outline"></ion-icon>
-			<input type="password" id="password" name="password" placeholder="Password"><br>
-			<div class="error"></div>
+			<input type="password" id="password" name="password" placeholder="Password" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"><br>
 			</div>
 
 			<div class="input-control">
 			<ion-icon name="mail-outline"></ion-icon>
-			<input type="email" id="email" name="email" placeholder="Email"><br>
-			<div class="error"></div>
+			<input type="email" id="email" name="email" placeholder="Email" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"><br>
 			</div>
 
 			<div class="input-control">
 			<ion-icon name="home-outline"></ion-icon>
-			<textarea input id="address" name="address" rows="3" placeholder="Address"></textarea><br>
-			<div class="error"></div>
+			<textarea type="text" id="address" name="address" rows="3" placeholder="Address" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"></textarea><br>
 			</div>
 
 			<div class="input-control">
 			<ion-icon name="game-controller-outline"></ion-icon>
-			<textarea input id="interests" name="interests"  rows="3" placeholder="Interest"></textarea><br>
-			<div class="error"></div>
+			<textarea type="text" id="interests" name="interests"  rows="3" placeholder="Interest" onblur="Success(this.value, this.id)" onfocus="Error(this.value, this.id)"></textarea><br>
 			</div>
 		</fieldset>
 	  </form>
 	<input type="submit" onclick="showInput();">
-    <input type="reset" value="Reset">
+    <input type="reset" onclick="clearAll()">
 
 	<fieldset>
 	<div class="output" id="output-div">
